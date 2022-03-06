@@ -18,14 +18,13 @@ header {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  position: -webkit-sticky;
   position: sticky;
+  position: -webkit-sticky;
   top: 0;
   background-image: url("../images/hero-bg.jpg");
-background-size: cover;
-background-position: center;
-background-attachment: fixed;
-background-position: 80%;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: 80%;
 }
 
 header h1 {
@@ -106,13 +105,12 @@ section {
 .hero {
   background-image: url('../images/hero-bg.jpg');
   background-size: cover;
-  background-position: center;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   align-items: flex-start;
   background-attachment: fixed;
-background-position: 80%;
+  background-position: 80%;
 }
 
 .hero-cta {
@@ -133,12 +131,13 @@ background-position: 80%;
 
 .hero-form {
   border: 3px solid #024e76;
-  background-color: rgba(252,225,56);
+  background-color: rgba(255, 225, 56, 0.8);
   padding: 20px;
   color: #024e76;
   width: 40%;
   margin: 3.5%;
   border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 .hero-form button:hover {
@@ -164,9 +163,10 @@ background-position: 80%;
   border-radius: 10px;
   background-color: rgba(255,255,255, 0.75);
 }
-  .form-input:focus {
-    background-color: rgba(255,255,255, 1);
-    outline: none;
+
+.form-input:focus {
+  background-color: rgba(255,255,255, 1);
+  outline: none;
 }
 
 .hero-form label {
@@ -226,14 +226,15 @@ background-position: 80%;
   margin: 50px auto;
   padding-bottom: 50px;
   width: 80%;
+  border-bottom: 1px solid #39a6b2;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
 }
 
-.step:not(last-child) {
-  border-bottom: 1px solid #39a6b2;
+.step:last-child {
+  border-bottom: none;
 }
 
 .step h3 {
@@ -272,7 +273,6 @@ background-position: 80%;
   line-height: 1.5;
   color: #024e76;
 }
-
 /* WHAT YOU DO STYLES END */
 
 /* MEET THE TRAINERS START */
@@ -353,7 +353,6 @@ background-position: 80%;
   line-height: 1.5;
   font-size: 16px;
   font-style: normal;
-  border-radius: 10px;
 }
 
 .contact-form input, .contact-form textarea {
@@ -365,13 +364,13 @@ background-position: 80%;
   width: 100%;
   margin-bottom: 15px;
   margin-top: 5px;
-  background-color: rgba(255,255,255, 1)
+  border-radius: 10px;
+  background-color: rgba(255,255,255, 0.75);
 }
 
 .contact-form input:focus, .contact-form textarea:focus {
-
-  color: #fce138;
-  background: #eceeee;
+  background-color: rgba(255,255,255, 1);
+  outline: none;
 }
 
 .contact-form button {
@@ -382,19 +381,17 @@ background-position: 80%;
   text-align: center;
   padding: 15px 0;
   font-size: 16px;
-  border-radius: 15px;
+  border-radius: 10px;
 }
 
 .contact-form button:hover {
   color: #fce138;
-  background: #c8d6d8;
+  background: #39a6b2;
 }
 
 .contact-info a {
   color: #fce138;
 }
-
-
 /* REACH OUT STYLES END */
 
 /* UTILITIES */
@@ -410,12 +407,12 @@ background-position: 80%;
   display: flex;
 }
 
-
 /* MEDIA QUERY FOR SMALLER DESKTOP SCREENS AND SMALLER */
 @media screen and (max-width: 980px) {
   header {
     padding-bottom: 0;
     justify-content: center;
+    position: relative;
   }
 
   header h1 {
@@ -439,70 +436,61 @@ background-position: 80%;
   }
 
   .hero-cta, .hero-form {
-      width: 100%;
-    }
-    
-    .hero-cta {
-      text-align: center;
-    }
-
-    .section-title {
-      width: 80%;
-    }
-    
-    .trainer {
-      flex: 0 70%;
-    }
-    
-    .contact-info iframe{
-      flex: 1 100%;
-    }
-
+    width: 100%;
+  }
   
+  .hero-cta {
+    text-align: center;
+  }
+
+  .section-title {
+    width: 80%;
+  }
+  
+  .trainer {
+    flex: 0 70%;
+  }
+  
+  .contact-info iframe{
+    flex: 1 100%;
+  }
 }
 
-@media screen and (max-width: 980px) {
+/* MEDIA QUERY FOR TABLETS AND SMALLER */
+@media screen and (max-width: 768px) {
   section {
     padding: 30px 15px;
-    
-  }
-  header {position:relative;
-}
-
-  @media screen and (max-width: 768px) {
-
-    section {
-      padding: 30px 15px;
-    }
-  
-    .step h3 {
-      flex: 1 100%;
-      text-align: center;
-    }
-  
-    .step-info {
-      flex: 2 100%;
-      text-align: center;
-      justify-content: center;
-    }
-  
-    .step-img {
-      flex: 0 32%;
-      margin-right: 0;
-      margin-top: 15px;
-      margin-bottom: 15px;
-    }
-  
-    .step-text {
-      flex: 100%;  
-    }
-  
   }
 
+  .step h3 {
+    flex: 1 100%;
+    text-align: center;
+  }
+
+  .step-info {
+    flex: 2 100%;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .step-img {
+    flex: 0 32%;
+    margin-right: 0;
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+
+  .step-text {
+    flex: 100%;  
+  }
+
+  .trainer-bio h3, .trainer-bio h4 {
+    display: block;
+  }
 }
 
+/* MEDIA QUERY FOR MOBILE PHONES AND SMALLER */
 @media screen and (max-width: 575px) {
-
   .hero-form button {
     width: 100%;
   }
@@ -526,6 +514,7 @@ background-position: 80%;
   .contact-info > * {
     flex: 0 100%;
   }
+
   .contact-form {
     order: 3;
   }
